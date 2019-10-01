@@ -1,26 +1,28 @@
 #include <iostream>
-#include <fstream>
+
 using namespace std;
 
 int main()
 {
-    int n,m,i,j,a,k,b;
-    ifstream in ("input.txt");
-    ofstream out ("output.txt");
-    in>>n;
-    in>>m;
-    int ma[n][m];
-    for(i=0;i<n;i++){
-        for(j=0;j<m;j++){
-                k=0;
-            in>>a;
-            ma[i][j]=a;
-               for(b=2;b<=a/2 && k==0;b++){
-                 if(a%b==0)k=1;
-                 }
-                 if(k==0)out<<"1"<<" ";else out<<"0"<<" ";
-        }out<<endl;
-    }
+    int i,j,n,m,a,b=0;
+    cin>>m;
+    cin>>n;
+    int ma[m][n];
 
-        return 0;
+    for(i=0;i<m;i++){
+        for(j=0;j<n;j++){
+        cin>>ma[i][j];
+    }}
+    for(i=0;i<m;i++){
+            j=0;a=1;
+        while (j<n/2 && b==0){
+            if(ma[i][j]==ma[i][n-a]){
+                j++;a++;
+            }else b=1;
+        }
+    }
+    if (b==0)cout<<"da";
+        else cout<<"nu";
+
+    return 0;
 }
