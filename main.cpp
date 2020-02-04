@@ -1,28 +1,38 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
-    int i,j,n,m,a,b=0;
-    cin>>m;
-    cin>>n;
-    int ma[m][n];
+    ifstream in1("nr1.txt");
+    ifstream in2("nr2.txt");
+    int m,n,temp1,temp2,v[10000]={0};
+    in1>>n;in2>>m;
 
-    for(i=0;i<m;i++){
-        for(j=0;j<n;j++){
-        cin>>ma[i][j];
-    }}
-    for(i=0;i<m;i++){
-            j=0;a=1;
-        while (j<n/2 && b==0){
-            if(ma[i][j]==ma[i][n-a]){
-                j++;a++;
-            }else b=1;
+    for(int i=0;i<n;i++){
+        int x;
+        in1>>x;
+        v[x]++;
+    }
+    for(int i=0;i<m;i++){
+        int x;
+        in2>>x;
+        v[x]++;
+    }
+    for(int i=0;i<10000;i++)
+    {
+        if(v[i]>1)
+        {
+            cout<<i<<" ";
         }
     }
-    if (b==0)cout<<"da";
-        else cout<<"nu";
+    cout<<endl;
+
+
+
+
+
 
     return 0;
 }
